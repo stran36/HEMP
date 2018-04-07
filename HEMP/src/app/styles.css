@@ -1,0 +1,55 @@
+.title{
+	-fx-background-color: white;
+	-fx-text-fill: black;
+	-fx-alignment: CENTER;
+	-fx-border-color: Dodgerblue;
+	-fx-font-size: 75px;
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+	-fx-font-family: Impact, Charcoal, sans-serif;
+	-fx-opacity: 0.75;
+	
+}
+
+.body {
+	-fx-background-color: orange;
+}
+
+.boxes {
+	-fx-font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.labels {
+	-fx-font-size: 20px;
+	-fx-background-color: white;
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+	-fx-border-style: solid;
+	-fx-border-color: black;
+}
+
+.verticalBox{
+	-fx-padding: 0 0 10 30;
+}
+
+.insideBox{
+	-fx-padding: 0 0 0 0;
+}
+
+.boxSpacing{
+	-fx-padding: 10 0 10 0;
+}
+
+.days {
+	-fx-background-color: pink;
+	-fx-border-radius: 5px;
+	-fx-background-radius: 5px;
+	-fx-border-style: solid;
+	-fx-border-color: black;
+}
+
+.des {
+	-fx-background-image: url("http://hubtiva.com/wp-content/uploads/2018/03/lime.jpg");
+	-fx-background-size: 250 275;
+	-fx-opacity: 0.75;
+}
