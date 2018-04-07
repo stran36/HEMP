@@ -1,5 +1,6 @@
 package visuals;
 
+import calculations.FoodTester;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -25,8 +26,9 @@ import javafx.scene.text.TextAlignment;
 
 public class GUI extends BorderPane {
 
-	private VBox verticalBox;
+	private VBox scene1;
 	private VBox scene2;
+	private VBox scene3;
 	private final int HEIGHT = 500;
 	private final int WIDTH = 500;
 
@@ -42,17 +44,17 @@ public class GUI extends BorderPane {
 		this.setMinSize(WIDTH, HEIGHT);
 		this.getStyleClass().add("body");
 		createScene2();
+		createScene3();
 		setPrimaryScene();
 		setMainBackground();
 		setTitle();
-
 	}
 	
 
 	// Setting for first scene
 	public void setPrimaryScene() {
-		verticalBox = new VBox();
-		verticalBox.getStyleClass().add("boxes");
+		scene1 = new VBox();
+		scene1.getStyleClass().add("boxes");
 
 		// Make horizontal box for each option
 		HBox horizontalBox1 = new HBox(8);
@@ -153,7 +155,7 @@ public class GUI extends BorderPane {
 		// Button and Label for finish
 		Label finish = new Label("Finished?");
 		Button switch_button = new Button("Click Here!!");
-		switchScene2(switch_button);
+		switchToScene2(switch_button);
 
 		// Put each label ComboBox into a HorizontalBox
 		horizontalBox1.getChildren().addAll(bodyGoal, choices);
@@ -163,12 +165,12 @@ public class GUI extends BorderPane {
 		horizontalBox3.getChildren().addAll(finish, switch_button);
 		horizontalBox3.setAlignment(Pos.BASELINE_CENTER);
 
-		verticalBox.getChildren().addAll(emptyBoxPrinter(), horizontalBox1, emptyBoxPrinter(), scene1Group1,
+		scene1.getChildren().addAll(emptyBoxPrinter(), horizontalBox1, emptyBoxPrinter(), scene1Group1,
 				emptyBoxPrinter(), horizontalBox2, emptyBoxPrinter(), emptyBoxPrinter(), emptyBoxPrinter(), emptyBoxPrinter(), emptyBoxPrinter(), horizontalBox3,
 				emptyBoxPrinter());
-		verticalBox.setAlignment(Pos.CENTER);
-		verticalBox.setAlignment(Pos.TOP_CENTER);
-		this.setCenter(verticalBox);
+		scene1.setAlignment(Pos.CENTER);
+		scene1.setAlignment(Pos.TOP_CENTER);
+		this.setCenter(scene1);
 
 	}
 
@@ -220,18 +222,18 @@ public class GUI extends BorderPane {
 				BackgroundSize.DEFAULT);
 
 		// then you set to your node
-		verticalBox.setBackground(new Background(myBI));
+		scene1.setBackground(new Background(myBI));
 	}
 
 	// Switch to Scene1
 	public void switchToScene1(Button button) {
 		button.setOnAction(e -> {
-			this.setCenter(verticalBox);
+			this.setCenter(scene1);
 		});
 	}
 	
 	// Switch to Scene2
-	public void switchScene2(Button button) {
+	public void switchToScene2(Button button) {
 		button.setOnAction(e -> {
 			if (choices.getSelectionModel().isEmpty() == false && ageBox.getSelectionModel().isEmpty() == false) {
 				this.setCenter(scene2);
@@ -240,7 +242,6 @@ public class GUI extends BorderPane {
 				if (choices.getSelectionModel().isEmpty()) {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Error in body type input");
-					//alert.setHeaderText("Look, an Information Dialog");
 					alert.setContentText("Please select a body type.");
 					alert.showAndWait();
 				}
@@ -248,11 +249,16 @@ public class GUI extends BorderPane {
 				if (ageBox.getSelectionModel().isEmpty()) {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Error in age input");
-					//alert.setHeaderText("Look, an Information Dialog");
 					alert.setContentText("Please select an age.");
 					alert.showAndWait();
 				}
 			}
+		});
+	}
+	
+	private void switchToScene3(Button button) {
+		button.setOnAction(e->{
+			this.setCenter(scene3);
 		});
 	}
 
@@ -269,7 +275,7 @@ public class GUI extends BorderPane {
 		VBox daysBox = new VBox();
 
 		Button switch_button = new Button("Finished!");
-		switchToScene1(switch_button);
+		switchToScene3(switch_button);
 		
 		// ChoiceBoxes for "Scene2"
 		ChoiceBox<String> scene2ComboBox1 = new ChoiceBox<>();
@@ -339,6 +345,14 @@ public class GUI extends BorderPane {
 		
 		//Adding Scene to BorderPane (Parent)
 		this.setCenter(scene2);
+	}
+	
+	public void createScene3() {
+		scene3 = new VBox();
+		scene3.getStyleClass().add("boxes");
+		FoodTester test = new FoodTester();
+		Label Monday = new Label(test.printMonday());
+		scene3.getChildren().add(Monday);
 	}
 
 	//Reset HorizontalBox for new Image

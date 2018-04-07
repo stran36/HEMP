@@ -60,11 +60,17 @@ public class FoodTester{
 		Sunday.add(new Food("Chocolate Ice Cream",0,350,"Dessert","Vegetarian"));
 	}
 	
-	private void printMonday() {
+	//Changed return type to STRING for testing purposes
+	//Testing this method in Scene3
+	public String printMonday() {
+		String output = "";
 		for (Food F : Monday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			//System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories" + "/n");
+			output += F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories" + "\n";
 		}
+		return output;
 	}
+	
 	private void printTuesday() {
 		for (Food F : Tuesday) {
 			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
