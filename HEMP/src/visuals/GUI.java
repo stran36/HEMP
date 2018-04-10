@@ -347,6 +347,7 @@ public class GUI extends BorderPane {
 		this.setCenter(scene2);
 	}
 	
+	//Create Scene 3
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
