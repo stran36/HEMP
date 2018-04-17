@@ -329,7 +329,7 @@ public class GUI extends BorderPane {
 		BackgroundImage myBI = new BackgroundImage(
 				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
 						HEIGHT, false, true),
-				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
 		
 		topBox.setBackground(new Background(myBI));
@@ -345,7 +345,7 @@ public class GUI extends BorderPane {
 		BackgroundImage myBI = new BackgroundImage(
 				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
 						HEIGHT, false, true),
-				BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
 
 		// then you set to your node
@@ -359,7 +359,7 @@ public class GUI extends BorderPane {
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
 				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
-				WIDTH, HEIGHT, false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
 		// then you set to your node
@@ -373,7 +373,7 @@ public class GUI extends BorderPane {
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
 				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
-				WIDTH, HEIGHT, false, true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT,
+				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
 		// then you set to your node
