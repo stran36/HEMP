@@ -351,6 +351,8 @@ public class GUI extends BorderPane {
 		// then you set to your node
 		scene1.setBackground(new Background(myBI));
 	}
+	
+	//testing
 
 	// Set Scene 2 picture
 	public void setScene2Background() {
