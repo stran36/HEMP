@@ -66,39 +66,39 @@ public class FoodTester{
 		String output = "";
 		for (Food F : Monday) {
 			//System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories" + "/n");
-			output += F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories" + "\n";
+			output += F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories" + "\n";
 		}
 		return output;
 	}
 	
 	private void printTuesday() {
 		for (Food F : Tuesday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	private void printWednesday() {
 		for (Food F : Wednesday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	private void printThursday() {
 		for (Food F : Thursday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	private void printFriday() {
 		for (Food F : Friday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	private void printSaturday() {
 		for (Food F : Saturday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	private void printSunday() {
 		for (Food F : Sunday) {
-			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getcalorie() + " calories");
+			System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 	

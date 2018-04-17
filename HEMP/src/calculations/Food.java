@@ -29,7 +29,7 @@ public class Food {
     public String getTypeName(){
         return typename;
     }
-    public int getcalorie(){
+    public int getCalorie(){
         return calorie;
     }
 	public String getTag_1(){
