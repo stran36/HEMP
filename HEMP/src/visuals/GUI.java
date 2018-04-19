@@ -1,7 +1,6 @@
 package visuals;
 
 import calculations.FoodTester;
-import calculations.Preference;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -13,8 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -26,6 +23,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
+import javafx.scene.text.*;
 
 public class GUI extends BorderPane {
 
@@ -54,11 +52,12 @@ public class GUI extends BorderPane {
 		setScene3Background();
 		setTitle();
 	}
-
+   
 	// Create Scene 1
 	public void createScene1() {
 		scene1 = new VBox();
 		scene1.getStyleClass().add("boxes");
+		
 
 		// Make horizontal box for each option
 		HBox horizontalBox1 = new HBox(8);
@@ -71,9 +70,12 @@ public class GUI extends BorderPane {
 		// Label "Body Goal!"
 		Label bodyGoal = new Label("Body Goal!");
 		bodyGoal.getStyleClass().add("labels");
+		bodyGoal.setPrefWidth(200);
+		bodyGoal.setAlignment(Pos.CENTER);
 
 		// Fill "Body Type" ChoiceBox
 		choices.getItems().addAll("Slim", "Healthy", "Body Builder", "Strict Diet");
+		choices.setPrefWidth(140);
 
 		// Set action for "Body Type" ChoiceBox or change picture based on body type
 		// choice
@@ -84,18 +86,18 @@ public class GUI extends BorderPane {
 		Group scene1Group1 = new Group();
 		scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 
-		Image image1 = new Image("http://clipart-library.com/images/qcBobppXi.png");
+		Image image1 = new Image("Slim.png");
 		ImageView imageView1 = imageViewSetup(image1);
 
 		Image image2 = new Image(
-				"https://thumb7.shutterstock.com/display_pic_with_logo/3814334/571041247/stock-vector-body-workout-stretching-exercises-healthy-life-style-concept-stick-figure-pictogram-icon-571041247.jpg");
+				"HealthyBody.jpg");
 		ImageView imageView2 = imageViewSetup(image2);
 
 		Image image3 = new Image(
-				"http://mariafresa.net/data_gallery/snatch-overhead-squat-weightlifting-olympic-weightlifting-nick-Kjqjgz-clipart.jpg");
+				"BodyBuilder.jpg");
 		ImageView imageView3 = imageViewSetup(image3);
 
-		Image image4 = new Image("https://cdn3.iconfinder.com/data/icons/vacation-4/32/vacation_29-512.png");
+		Image image4 = new Image("StrictDiet.png");
 		ImageView imageView4 = imageViewSetup(image4);
 
 		// Picture changes for Body Goal
@@ -144,6 +146,8 @@ public class GUI extends BorderPane {
 		// Label "Choose your Age"
 		Label age = new Label("Choose Your Age!");
 		age.getStyleClass().add("labels");
+		age.setPrefWidth(200);
+		age.setAlignment(Pos.CENTER);
 
 		// Generate ages into String Array Form
 		String[] ageArray = new String[100];
@@ -154,7 +158,7 @@ public class GUI extends BorderPane {
 
 		// Fill "Choose you Age" ChoiceBox
 		ageBox.getItems().addAll(ageOptions);
-		ageBox.setPrefWidth(100);
+		ageBox.setPrefWidth(140);
 		ageBox.setVisibleRowCount(4);
 
 		// Button and Label for finish
@@ -290,32 +294,22 @@ public class GUI extends BorderPane {
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
-		
-		TabPane tabPane = new TabPane();
+		FoodTester testMonday = new FoodTester();
 
-		Tab monTab = new Tab();
-		monTab.setText("Monday");
-		tabPane.getTabs().add(monTab);
-		
-		Tab tueTab = new Tab();
-		tueTab.setText("Tuesday");
-		tabPane.getTabs().add(tueTab);
-		
-		Tab wedTab = new Tab();
-		wedTab.setText("Wednesday");
-		tabPane.getTabs().add(wedTab);
-		
-		Tab thuTab = new Tab();
-		thuTab.setText("Thursday");
-		tabPane.getTabs().add(thuTab);
-		
-		Tab friTab = new Tab();
-		friTab.setText("Friday");
-		tabPane.getTabs().add(friTab);
-		
-		scene3.getChildren().add(tabPane);
-		
-		
+		Label Monday = new Label(testMonday.printMonday());
+		FoodTester testTuesday = new FoodTester();
+		Label Tuesday = new Label(testTuesday.printMonday());
+		FoodTester testWednesday = new FoodTester();
+		Label Wednesday = new Label(testWednesday.printMonday());
+		FoodTester testThursday = new FoodTester();
+		Label Thursday = new Label(testThursday.printMonday());
+		FoodTester testFriday = new FoodTester();
+		Label Friday = new Label(testFriday.printMonday());
+		FoodTester testSaturday = new FoodTester();
+		Label Saturday = new Label(testSaturday.printMonday());
+		FoodTester testSunday = new FoodTester();
+		Label Sunday = new Label(testSunday.printMonday());
+		scene3.getChildren().addAll(Monday,Tuesday,Wednesday);
 	}
 
 	// Return invisible Image
@@ -352,8 +346,10 @@ public class GUI extends BorderPane {
 		topBox.getChildren().addAll(title, description);
 		topBox.setAlignment(Pos.CENTER);
 		
+		// https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0571/0723/rxmas_stripe_red1_shop_preview.png
+		
 		BackgroundImage myBI = new BackgroundImage(
-				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
+				new Image("Title.png", WIDTH,
 						HEIGHT, false, true),
 				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
@@ -369,16 +365,18 @@ public class GUI extends BorderPane {
 		// URL for main fruit Image
 		// https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg
 		BackgroundImage myBI = new BackgroundImage(
-				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
+				new Image("Scene1BackGround.jpg", WIDTH,
 						HEIGHT, false, true),
 				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
+		
+		//ImageView node = new ImageView(new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg"));
+		
 
 		// then you set to your node
 		scene1.setBackground(new Background(myBI));
+		//scene1.setVgrow(node, javafx.scene.layout.Priority.ALWAYS);
 	}
-	
-	//testing
 
 	// Set Scene 2 picture
 	public void setScene2Background() {
@@ -386,7 +384,7 @@ public class GUI extends BorderPane {
 		// URL for Scene2 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
-				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
+				"Scene2BackGround.jpg",
 				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
@@ -400,7 +398,7 @@ public class GUI extends BorderPane {
 		// URL for Scene3 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
-				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
+				"Scene3BackGround.jpg",
 				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
