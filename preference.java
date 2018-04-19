@@ -1,9 +1,12 @@
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-public class preference {
+public class Preference {
     private int age = 35;
     private int goal;
     private String name = "John Doe";
-    private int reccomended 2600;
+    private int reccomended = 2600;
     private String goalname;
     private double p;
     private double d;
@@ -17,70 +20,74 @@ public class preference {
     private int excludeFri = 9;
     private int excludeSat = 9;
     private int excludeSun = 9;
-    private List < Food > Foods = new < Food > ArrayList();
-    private List < Food > Dairy = new < Food > ArrayList();
-    private List < Food > Protein = new < Food > ArrayList();
-    private List < Food > Vegetable = new < Food > ArrayList();
+    private List<Food> Foods = new ArrayList<>();
+    private List < Food > Dairy = new ArrayList();
+    private List < Food > Protein = new ArrayList();
+    private List < Food > Vegetable = new ArrayList();
     private List < Food > Fruit = new < Food > ArrayList();
-    private List < Food > Grains = new < Food > ArrayList();
-    private List < Food > CheatFoodMon = new < Food > ArrayList();
-    private List < Food > CheatFoodTues = new < Food > ArrayList();
-    private List < Food > CheatFoodWeds = new < Food > ArrayList();
-    private List < Food > CheatFoodThurs = new < Food > ArrayList();
-    private List < Food > CheatFoodFri = new < Food > ArrayList();
-    private List < Food > CheatFoodSat = new < Food > ArrayList();
-    private List < Food > CheatFoodSun = new < Food > ArrayList();
-    private List < Food > Monday = new < Food > ArrayList();
-    private List < Food > Tuesday = new < Food > ArrayList();
-    private List < Food > Wedsnday = new < Food > ArrayList();
-    private List < Food > Thursday = new < Food > ArrayList();
-    private List < Food > Friday = new < Food > ArrayList();
-    private List < Food > Saturday = new < Food > ArrayList();
-    private List < Food > Sunday = new < Food > ArrayList();
-	
-	Foods.add(new Food(“McDonalds Cheeseburger”,1,313,”Burger”,”American”);
-	Foods.add(new Food(“Kabuki Vegan Burger”, 2,240,”Burger”,”Vegetarian”);
-	Foods.add(new Food(“Giuseppe's Pizza Burger”,1,300,”Burger”,”Italian”);
-	Foods.add(new Food(“Habit Char Burger”,1,275,”Burger”,”American”);
-	Foods.add(new Food(“LaCroix Portabella Burger”,1,277,”Burger”,”French”);
-	Foods.add(new Food(“Olive Garden Caesar Salad”, 2,150,”Italian”,”Salad”);
-	Foods.add(new Food(“Olive Garden French Salad”,2,145,”French”,”Salad”);
-	Foods.add(new Food(“Cheesecake Factory Fruit Salad” 3,120,”Salad”,”Vegetarian”);
-	Foods.add(new Food(“Kabuki Seaweed Salad”,2,150,”Salad”,”Asian”);
-	Foods.add(new Food(“Dickey’s BBQ Salad”,2,200,”Salad”,”American”);
-	Foods.add(new Food(“Norm’s Porterhouse Steak”,1,300,”Steak”,”American”);
-	Foods.add(new Food(“Black Angus Prime Rib”,1,277,”Steak”,”American”);
-	Foods.add(new Food(“Olive Garden NY Strip”,1,210,”Steak”,”Italian”);
-	Foods.add(new Food(“LaCroix Bearnaise Porterhouse”,1,300,”Steak”,“French”);
-	Foods.add(new Food(“LaCroix Filet Minion”,1,250,”Steak”,”French”);
-	Foods.add(new Food(“LaCroix Strawberry Tart”,3,120,”French”,”Vegetarian”);
-	Foods.add(new Food(“McCormicks Fruit Medley”,3,200,”American”,”Vegetarian”);
-	Foods.add(new Food(“Anthony’s Pineapple Tart” 3,120,”American”,”Vegetarian”);
-	Foods.add(new Food(“Giuseppe's Raspberry Cannoli”,3,124,”Italian”,”Vegetarian”);
-	Foods.add(new Food(“Kabuki Fresh Fruit”,3,100,”Asian”,”Vegetarian”);
-	Foods.add(new Food(“China King Lo Mein”,4,200,”Asian”,”Asian”);
-	Foods.add(new Food(“Shinsengumi Ramen”,4,155,”Asian”,”Asian”);
-	Foods.add(new Food(“Giuseppes Mushroom Risotto”,4,”Italian”,”Italian”);
-	Foods.add(new Food(“Giuseppes Seafood Linguini”,4,”Italian”,”Italian”);
-	Foods.add(new Food(“Olive Garden Garlic Bread Loaf”,4,”Italian”,”Vegetarian”);
-	Foods.add(new Food(“McDonalds Milkshake”,0,120,”American”,”Vegetarian”);
-	Foods.add(new Food(“Kabuki Milk Tea”,0,100,”Asian”,”Vegetarian”);
-	Foods.add(new Food(“Giuseppes Gelato”,0,150,”Italian”,”Vegetarian”);
-	Foods.add(new Food(“Shinsengumi Ice Cream”,0,150,”Asian”,”Vegetarian”);
-	Foods.add(new Food(“LaCroix Cheesecake”,1,200,’’French”,Vegetarian”);
+    private List < Food > Grains = new ArrayList();
+    private List < Food > CheatFoodMon = new ArrayList();
+    private List < Food > CheatFoodTues = new ArrayList();
+    private List < Food > CheatFoodWeds = new ArrayList();
+    private List < Food > CheatFoodThurs = new ArrayList();
+    private List < Food > CheatFoodFri = new ArrayList();
+    private List < Food > CheatFoodSat = new ArrayList();
+    private List < Food > CheatFoodSun = new ArrayList();
+    private List < Food > Monday = new ArrayList();
+    private List < Food > Tuesday = new ArrayList();
+    private List < Food > Wedsnday = new ArrayList();
+    private List < Food > Thursday = new ArrayList();
+    private List < Food > Friday = new ArrayList();
+    private List < Food > Saturday = new ArrayList();
+    private List < Food > Sunday = new ArrayList();
+    
+    
+	public void populateLists() {
+	Foods.add(new Food("McDonalds Cheeseburger",1,313,"Burger","American"));
+	Foods.add(new Food("Kabuki Vegan Burger", 2,240,"Burger","Vegetarian"));
+	Foods.add(new Food("Giuseppe's Pizza Burger",1,300,"Burger","Italian"));
+	Foods.add(new Food("Habit Char Burger",1,275,"Burger","American"));
+	Foods.add(new Food("LaCroix Portabella Burger",1,277,"Burger","French"));
+	Foods.add(new Food("Olive Garden Caesar Salad", 2,150,"Italian","Salad"));
+	Foods.add(new Food("Olive Garden French Salad",2,145,"French","Salad"));
+	Foods.add(new Food("Cheesecake Factory Fruit Salad", 3,120,"Salad","Vegetarian"));
+	Foods.add(new Food("Kabuki Seaweed Salad",2,150,"Salad","Asian"));
+	Foods.add(new Food("Dickey’s BBQ Salad",2,200,"Salad","American"));
+	Foods.add(new Food("Norm’s Porterhouse Steak",1,300,"Steak","American"));
+	Foods.add(new Food("Black Angus Prime Rib",1,277,"Steak","American"));
+	Foods.add(new Food("Olive Garden NY Strip",1,210,"Steak","Italian"));
+	Foods.add(new Food("LaCroix Bearnaise Porterhouse",1,300,"Steak","French"));
+	Foods.add(new Food("LaCroix Filet Minion",1,250,"Steak","French"));
+	Foods.add(new Food("LaCroix Strawberry Tart",3,120,"French","Vegetarian"));
+	Foods.add(new Food("McCormicks Fruit Medley",3,200,"American","Vegetarian"));
+	Foods.add(new Food("Anthony’s Pineapple Tart", 3,120,"American","Vegetarian"));
+	Foods.add(new Food("Giuseppe's Raspberry Cannoli",3,124,"Italian","Vegetarian"));
+	Foods.add(new Food("Kabuki Fresh Fruit",3,100,"Asian","Vegetarian"));
+	Foods.add(new Food("China King Lo Mein",4,200,"Asian","Asian"));
+	Foods.add(new Food("Shinsengumi Ramen",4,155,"Asian","Asian"));
+	Foods.add(new Food("Giuseppes Mushroom Risotto",4,155,"Italian","Italian"));
+	Foods.add(new Food("Giuseppes Seafood Linguini",4, 200, "Italian","Italian"));
+	Foods.add(new Food("Olive Garden Garlic Bread Loaf",4, 500, "Italian","Vegetarian"));
+	Foods.add(new Food("McDonalds Milkshake",0,120,"American","Vegetarian"));
+	Foods.add(new Food("Kabuki Milk Tea",0,100,"Asian","Vegetarian"));
+	Foods.add(new Food("Giuseppes Gelato",0,150,"Italian","Vegetarian"));
+	Foods.add(new Food("Shinsengumi Ice Cream",0,150,"Asian","Vegetarian"));
+	Foods.add(new Food("LaCroix Cheesecake",1,200, "French", "Vegetarian"));
+	}
 	
 	// Tag options for drop down menu French,Italian,American,Asian,Salad,Burger,Steak,Vegetarian
 	
 	
 	// constructor used after user interacts with goal module
     public void preference(int goal) {
+    		populateLists();
         this.goal = goal;
         if (goal == 0) {
-            goalname = "Muscle Gain"
+            goalname = "Muscle Gain";
 			} else if (goal == 1) {
-            goalname = "Maintaining Weight"
+            goalname = "Maintaining Weight";
 			} else {
-            goalname = "Weight loss"
+            goalname = "Weight loss";
 		}
         goalcalc();
         org();
@@ -108,15 +115,15 @@ public class preference {
 	}
     public void org() {
         for (Food F: Foods) {
-            if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getType() == 0 && F.getCalorie() <= d) {
                 Dairy.add(F);
-				} else if (F.gettype == 1 && F.getcalorie = < d) {
+				} else if (F.getType() == 1 && F.getCalorie() <= d) {
                 Protein.add(F);
-				} else if (F.gettype == 2 && F.getcalorie = < v) {
+				} else if (F.getType() == 2 && F.getCalorie() <= v) {
                 Vegetable.add(F);
-				} else if (F.gettype == 3 && F.getcalorie = < f) {
+				} else if (F.getType() == 3 && F.getCalorie() <= f) {
                 Fruit.add(F);
-				} else if (F.gettype == 4 && F.getcalorie = < g) {
+				} else if (F.getType() == 4 && F.getCalorie() <= g) {
                 Grains.add(F);
 			}
 		}
@@ -124,154 +131,154 @@ public class preference {
 	//each of the following cheat pickers take a string value that is predetermined by the corresponding drop-down menu 
     public void cheatpickerMon(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodMon.add(F);
-                    excludeMon = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeMon = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodMon.add(F);
-                    excludeMon = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeMon = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodMon.add(F);
-                    excludeMon = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeMon = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodMon.add(F);
-                    excludeMon = F.gettype;
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeMon = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodMon.add(F);
-                    excludeMon = F.gettype();
+                    excludeMon = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerTues(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodTues.add(F);
-                    excludeTues = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeTues = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodTues.add(F);
-                    excludeTues = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeTues = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodTues.add(F);
-                    excludeTues = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeTues = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodTues.add(F);
-                    excludeTues = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeTues = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodTues.add(F);
-                    excludeTues = F.gettype();
+                    excludeTues = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerWeds(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodWeds.add(F);
-                    excludeWeds = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeWeds = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodWeds.add(F);
-                    excludeWeds = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeWeds = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodWeds.add(F);
-                    excludeWeds = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeWeds = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodWeds.add(F);
-                    excludeWeds = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeWeds = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodWeds.add(F);
-                    excludeWeds = F.gettype();
+                    excludeWeds = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerThurs(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodThurs.add(F);
-                    excludeThurs = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeThurs = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodThurs.add(F);
-                    excludeThurs = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeThurs = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodThurs.add(F);
-                    excludeThurs = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeThurs = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodThurs.add(F);
-                    excludeThurs = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeThurs = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodThurs.add(F);
-                    excludeThurs = F.gettype();
+                    excludeThurs = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerFri(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodFri.add(F);
-                    excludeFri = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeFri = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodFri.add(F);
-                    excludeFri = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeFri = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodFri.add(F);
-                    excludeFri = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeFri = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodFri.add(F);
-                    excludeFri = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeFri = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodFri.add(F);
-                    excludeFri = F.gettype();
+                    excludeFri = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerSat(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodSat.add(F);
-                    excludeSat = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeSat = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodSat.add(F);
-                    excludeSat = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeSat = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodSat.add(F);
-                    excludeSat = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeSat = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodSat.add(F);
-                    excludeSat = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeSat = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodSat.add(F);
-                    excludeSat = F.gettype();
+                    excludeSat = F.getType();
 				}
 			}
 		}
 	}
     public void cheatpickerSun(String Tag_in) {
         for (Food F: Foods) {
-            if (F.getTag_1.equals(Tag_in) || F.getTag_1.equals(Tag_in)) {
-                if (F.gettype == 0 && F.getcalorie = < d) {
+            if (F.getTag_1().equals(Tag_in) || F.getTag_2().equals(Tag_in)) {
+                if (F.getType() == 0 && F.getCalorie() <= d) {
                     CheatFoodSun.add(F);
-                    excludeSun = F.gettype();
-					} else if (F.gettype == 1 && F.getcalorie = < d) {
+                    excludeSun = F.getType();
+					} else if (F.getType() == 1 && F.getCalorie() <= d) {
                     CheatFoodSun.add(F);
-                    excludeSun = F.gettype();
-					} else if (F.gettype == 2 && F.getcalorie = < v) {
+                    excludeSun = F.getType();
+					} else if (F.getType() == 2 && F.getCalorie() <= v) {
                     CheatFoodSun.add(F);
-                    excludeSun = F.gettype();
-					} else if (F.gettype == 3 && F.getcalorie = < f) {
+                    excludeSun = F.getType();
+					} else if (F.getType() == 3 && F.getCalorie() <= f) {
                     CheatFoodSun.add(F);
-                    excludeSun = F.gettype();
-					} else if (F.gettype == 4 && F.getcalorie = < g) {
+                    excludeSun = F.getType();
+					} else if (F.getType() == 4 && F.getCalorie() <= g) {
                     CheatFoodSun.add(F);
-                    excludeSun = F.gettype();
+                    excludeSun = F.getType();
 				}
 			}
 		}
@@ -371,83 +378,85 @@ public class preference {
         Sunday.add(Grains.get(GSU));
         
         for (Food F: Monday) {
-            if (F.gettype == excludeMon) {
-                Monday.remove(F)
+            if (F.getType() == excludeMon) {
+                Monday.remove(F);
 			}
 		}
         for (Food F: Tuesday) {
-            if (F.gettype == excludeTues) {
-                Tuesday.remove(F)
+            if (F.getType() == excludeTues) {
+                Tuesday.remove(F);
 			}
 		}
         for (Food F: Wedsnday) {
-            if (F.gettype == excludeWeds) {
-                Wedsnday.remove(F)
+            if (F.getType() == excludeWeds) {
+                Wedsnday.remove(F);
 			}
 		}		
         for (Food F: Thursday) {
-            if (F.gettype == excludeThurs) {
-                Thursday.remove(F)
+            if (F.getType() == excludeThurs) {
+                Thursday.remove(F);
 			}
 		}
         for (Food F: Friday) {
-            if (F.gettype == excludeFri) {
-                Friday.remove(F)
+            if (F.getType() == excludeFri) {
+                Friday.remove(F);
 			}
 		}
         for (Food F: Saturday) {
-            if (F.gettype == excludeSat) {
-                Saturday.remove(F)
+            if (F.getType() == excludeSat) {
+                Saturday.remove(F);
 			}
 		}
         for (Food F: Sunday) {
-            if (F.gettype == excludeSun) {
-                Sunday.remove(F)
+            if (F.getType() == excludeSun) {
+                Sunday.remove(F);
 			}
 		}
 		
-		Monday.add(CFM);
-		Tuesday.add(CFT);
-		Wedsnday.add(CFW);
-		Thursday.add(CFTH);
-		Friday.add(CFF);
-		Saturday.add(CFSA);
-		Sunday.add(CFSU);
+		Monday.add(CheatFoodMon.get(CFM));
+		Tuesday.add(CheatFoodMon.get(CFT));
+		Wedsnday.add(CheatFoodMon.get(CFW));
+		Thursday.add(CheatFoodMon.get(CFTH));
+		Friday.add(CheatFoodMon.get(CFF));
+		Saturday.add(CheatFoodMon.get(CFSA));
+		Sunday.add(CheatFoodMon.get(CFSU));
 	}
 	//End screen printer
-    private void printMonday() {
+    public void printMonday() {
+    	System.out.println("Runs");
         for (Food F: Monday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printTuesday() {
         for (Food F: Tuesday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printWedsnday() {
         for (Food F: Wedsnday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printThursday() {
         for (Food F: Thursday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printFriday() {
         for (Food F: Friday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printSaturday() {
         for (Food F: Saturday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
     private void printSunday() {
         for (Food F: Sunday) {
-            System.out.println(F.getname() + " " + F.gettypename() + " " + F.getcalorie() + " calories");
+            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
 }
+
