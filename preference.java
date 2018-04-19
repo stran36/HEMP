@@ -384,65 +384,129 @@ public class Preference {
 		Sunday.add(Vegetable.get(VSU));
 		Sunday.add(Fruit.get(FSU));
 		Sunday.add(Grains.get(GSU));
-		excludeMon = CheatFoodMon.get(CFM).getType();
-		excludeTues = CheatFoodTues.get(CFT).getType();
-		excludeWeds = CheatFoodWeds.get(CFW).getType();
-		excludeThurs = CheatFoodThurs.get(CFTH).getType();
-		excludeFri = CheatFoodFri.get(CFF).getType();
-		excludeSat = CheatFoodSat.get(CFSA).getType();
-		excludeSun = CheatFoodSun.get(CFSU).getType();
-		
-		remove();
 
-		Monday.add(CheatFoodMon.get(CFM));
-		Tuesday.add(CheatFoodTues.get(CFT));
-		Wedsnday.add(CheatFoodWeds.get(CFW));
-		Thursday.add(CheatFoodThurs.get(CFTH));
-		Friday.add(CheatFoodFri.get(CFF));
-		Saturday.add(CheatFoodSat.get(CFSA));
-		Sunday.add(CheatFoodSun.get(CFSU));
+		if (CheatFoodMon.isEmpty() == false) {
+			excludeMon = -1;
+		} else {
+			excludeMon = CheatFoodMon.get(CFM).getType();
+		}
+		if (CheatFoodTues.isEmpty() == false) {
+			excludeTues = -1;
+		} else {
+			excludeTues = CheatFoodTues.get(CFT).getType();
+		}
+		if (CheatFoodWeds.isEmpty() == false) {
+			excludeWeds = -1;
+		} else {
+			excludeWeds = CheatFoodWeds.get(CFW).getType();
+		}
+		if (CheatFoodThurs.isEmpty() == false) {
+			excludeThurs = -1;
+		} else {
+			excludeThurs = CheatFoodThurs.get(CFTH).getType();
+		}
+		if (CheatFoodFri.isEmpty() == false) {
+			excludeFri = -1;
+		} else {
+			excludeFri = CheatFoodFri.get(CFF).getType();
+		}
+		if (CheatFoodSat.isEmpty() == false) {
+			excludeSat = -1;
+		} else {
+			excludeSat = CheatFoodSat.get(CFSA).getType();
+		}
+		if (CheatFoodSun.isEmpty() == false) {
+			excludeSun = -1;
+		} else {
+			excludeSun = CheatFoodSun.get(CFSU).getType();
+		}
+
+		remove();
+		if (excludeMon != -1) {
+			Monday.add(CheatFoodMon.get(CFM));
+		}
+		if (excludeTues != -1) {
+			Tuesday.add(CheatFoodTues.get(CFT));
+		}
+		if (excludeWeds != -1) {
+			Wedsnday.add(CheatFoodWeds.get(CFW));
+		}
+		if (excludeThurs != -1) {
+			Thursday.add(CheatFoodThurs.get(CFTH));
+		}
+		if (excludeFri != -1) {
+			Friday.add(CheatFoodFri.get(CFF));
+		}
+		if (excludeSat != -1) {
+			Saturday.add(CheatFoodSat.get(CFSA));
+		}
+		if (excludeSun != -1) {
+			Sunday.add(CheatFoodSun.get(CFSU));
+		}
+
 	}
 
 	// End screen printer
 	private void remove() {
 
 		for (Food F : Monday) {
+			if (excludeMon == -1) {
+				break;
+			}
 			if (F.getType() == excludeMon) {
 				Monday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Tuesday) {
+			if (excludeTues == -1) {
+				break;
+			}
 			if (F.getType() == excludeTues) {
 				Tuesday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Wedsnday) {
+			if (excludeWeds == -1) {
+				break;
+			}
 			if (F.getType() == excludeWeds) {
 				Wedsnday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Thursday) {
+			if (excludeThurs == -1) {
+				break;
+			}
 			if (F.getType() == excludeThurs) {
 				Thursday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Friday) {
+			if (excludeFri == -1) {
+				break;
+			}
 			if (F.getType() == excludeFri) {
 				Friday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Saturday) {
+			if (excludeSat == -1) {
+				break;
+			}
 			if (F.getType() == excludeSat) {
 				Saturday.remove(F);
 				break;
 			}
 		}
 		for (Food F : Sunday) {
+			if (excludeSun == -1) {
+				break;
+			}
 			if (F.getType() == excludeSun) {
 				Sunday.remove(F);
 				break;
