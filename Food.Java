@@ -11,30 +11,30 @@ public class Food {
         this.type=type;
 		this.Tag_1=Tag_1;
 		this.Tag_2=Tag_2;
-        if(type == 0){typename = "Dairy"}
-        else if(type == 1){typename = "Protein"}
-        else if(type == 2){typename = "Vegetable"}
-        else if(type == 3){typename = "Fruit"}
-        else if(type == 4){typename = "Grain and Cereals"}
+        if(type == 0){typename = "Dairy";}
+        else if(type == 1){typename = "Protein";}
+        else if(type == 2){typename = "Vegetable";}
+        else if(type == 3){typename = "Fruit";}
+        else if(type == 4){typename = "Grain and Cereals";}
 		else{}
         this.calorie=calorie;
     }
-    public static String()getname{
+    public String getName(){
         return name;
     }
-    public static int gettype(){
+    public int getType(){
         return type;
     }
-    public static String gettypename(){
+    public String getTypeName(){
         return typename;
     }
-    public static int getcalorie(){
+    public int getCalorie(){
         return calorie;
     }
-	public static String()getTag_1{
+	public String getTag_1(){
         return Tag_1;
     }
-	public static String()getTag_2{
+	public String getTag_2(){
         return Tag_2;
     }
 	

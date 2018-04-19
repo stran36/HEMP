@@ -285,7 +285,7 @@ public class Preference {
 	}
 	
 	// re-randomize button at print screen
-	private void rerandomize() {
+	public void rerandomize() {
 		Monday.clear();
 		Tuesday.clear();
 		Wedsnday.clear();
@@ -297,7 +297,7 @@ public class Preference {
 	}
 	
     // after cheat food input interface
-	private void randomize() {
+	public void randomize() {
         Random R = new Random();
         int CFM = R.nextInt(CheatFoodMon.size());
         int DM = R.nextInt(Dairy.size());
@@ -377,83 +377,95 @@ public class Preference {
         Sunday.add(Fruit.get(FSU));
         Sunday.add(Grains.get(GSU));
         
+        remove();
+       
+		Monday.add(CheatFoodMon.get(CFM));
+		Tuesday.add(CheatFoodTues.get(CFT));
+		Wedsnday.add(CheatFoodWeds.get(CFW));
+		Thursday.add(CheatFoodThurs.get(CFTH));
+		Friday.add(CheatFoodFri.get(CFF));
+		Saturday.add(CheatFoodSat.get(CFSA));
+		Sunday.add(CheatFoodSun.get(CFSU));
+	}
+	//End screen printer
+	private void remove() {
+		 
         for (Food F: Monday) {
             if (F.getType() == excludeMon) {
                 Monday.remove(F);
+                break;
 			}
 		}
         for (Food F: Tuesday) {
             if (F.getType() == excludeTues) {
                 Tuesday.remove(F);
+                break;
 			}
 		}
         for (Food F: Wedsnday) {
             if (F.getType() == excludeWeds) {
                 Wedsnday.remove(F);
+                break;
 			}
 		}		
         for (Food F: Thursday) {
             if (F.getType() == excludeThurs) {
                 Thursday.remove(F);
+                break;
 			}
 		}
         for (Food F: Friday) {
             if (F.getType() == excludeFri) {
                 Friday.remove(F);
+                break;
 			}
 		}
         for (Food F: Saturday) {
             if (F.getType() == excludeSat) {
                 Saturday.remove(F);
+                break;
 			}
 		}
         for (Food F: Sunday) {
             if (F.getType() == excludeSun) {
                 Sunday.remove(F);
+                break;
 			}
 		}
 		
-		Monday.add(CheatFoodMon.get(CFM));
-		Tuesday.add(CheatFoodMon.get(CFT));
-		Wedsnday.add(CheatFoodMon.get(CFW));
-		Thursday.add(CheatFoodMon.get(CFTH));
-		Friday.add(CheatFoodMon.get(CFF));
-		Saturday.add(CheatFoodMon.get(CFSA));
-		Sunday.add(CheatFoodMon.get(CFSU));
 	}
-	//End screen printer
+	
     public void printMonday() {
-    	System.out.println("Runs");
         for (Food F: Monday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printTuesday() {
+    public void printTuesday() {
         for (Food F: Tuesday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printWedsnday() {
+    public void printWedsnday() {
         for (Food F: Wedsnday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printThursday() {
+    public void printThursday() {
         for (Food F: Thursday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printFriday() {
+    public void printFriday() {
         for (Food F: Friday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printSaturday() {
+    public void printSaturday() {
         for (Food F: Saturday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
-    private void printSunday() {
+    public void printSunday() {
         for (Food F: Sunday) {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
