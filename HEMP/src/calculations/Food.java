@@ -17,11 +17,11 @@ public class Food {
         else if(type == 1){typename = "Protein";}
         else if(type == 2){typename = "Vegetable";}
         else if(type == 3){typename = "Fruit";}
-        else{typename = "Grain and Cereals";}
+        else if(type == 4){typename = "Grain and Cereals";}
+		else{}
         this.calorie=calorie;
-        
     }
-    public String getname(){
+    public String getName(){
         return name;
     }
     public int getType(){
@@ -42,3 +42,4 @@ public class Food {
 	
     
 }
+

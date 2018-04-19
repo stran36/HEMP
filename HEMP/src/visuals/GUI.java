@@ -1,6 +1,5 @@
 package visuals;
 
-import calculations.FoodTester;
 import calculations.Preference;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -290,6 +289,24 @@ public class GUI extends BorderPane {
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
+		
+		Preference test = new Preference();
+		test.preference(1);
+		test.populateLists();
+		test.cheatpickerMon("Burger");
+		test.cheatpickerTues("Burger");
+		test.cheatpickerWeds("Burger");
+		test.cheatpickerThurs("Burger");
+		test.cheatpickerFri("Burger");
+//		test.randomize();
+		
+//		test.printMonday();
+//		test.printTuesday();
+//		test.printWedsnday();
+//		test.printThursday();
+//		test.printFriday();
+//		test.printSaturday();
+		
 		
 		TabPane tabPane = new TabPane();
 
