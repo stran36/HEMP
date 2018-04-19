@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -288,18 +290,32 @@ public class GUI extends BorderPane {
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
-		Preference test = new Preference();
-//		test.preference(1);
-//		test.cheatpickerMon("Burger");
-//		test.cheatpickerTues("Burger");
-//		test.cheatpickerWeds("Burger");
-//		test.cheatpickerThurs("Burger");
-//		test.cheatpickerFri("Burger");
-//		test.runRandomize();
-//		test.printMonday();
-//		FoodTester test = new FoodTester();
-//		Label Monday = new Label(test.printMonday());
-//		scene3.getChildren().add(Monday);
+		
+		TabPane tabPane = new TabPane();
+
+		Tab monTab = new Tab();
+		monTab.setText("Monday");
+		tabPane.getTabs().add(monTab);
+		
+		Tab tueTab = new Tab();
+		tueTab.setText("Tuesday");
+		tabPane.getTabs().add(tueTab);
+		
+		Tab wedTab = new Tab();
+		wedTab.setText("Wednesday");
+		tabPane.getTabs().add(wedTab);
+		
+		Tab thuTab = new Tab();
+		thuTab.setText("Thursday");
+		tabPane.getTabs().add(thuTab);
+		
+		Tab friTab = new Tab();
+		friTab.setText("Friday");
+		tabPane.getTabs().add(friTab);
+		
+		scene3.getChildren().add(tabPane);
+		
+		
 	}
 
 	// Return invisible Image

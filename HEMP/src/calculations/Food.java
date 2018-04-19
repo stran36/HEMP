@@ -19,8 +19,6 @@ public class Food {
         else if(type == 3){typename = "Fruit";}
         else{typename = "Grain and Cereals";}
         this.calorie=calorie;
-//        System.out.println("Food item added: " + name + "");
-//       System.out.println("Type of food: " + typename);
         
     }
     public String getname(){
