@@ -1,6 +1,7 @@
 package visuals;
 
 import calculations.FoodTester;
+import calculations.Preference;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -287,9 +288,18 @@ public class GUI extends BorderPane {
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
-		FoodTester test = new FoodTester();
-		Label Monday = new Label(test.printMonday());
-		scene3.getChildren().add(Monday);
+		Preference test = new Preference();
+//		test.preference(1);
+//		test.cheatpickerMon("Burger");
+//		test.cheatpickerTues("Burger");
+//		test.cheatpickerWeds("Burger");
+//		test.cheatpickerThurs("Burger");
+//		test.cheatpickerFri("Burger");
+//		test.runRandomize();
+//		test.printMonday();
+//		FoodTester test = new FoodTester();
+//		Label Monday = new Label(test.printMonday());
+//		scene3.getChildren().add(Monday);
 	}
 
 	// Return invisible Image

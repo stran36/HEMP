@@ -21,25 +21,25 @@ public class Preference {
     private int excludeSat = 9;
     private int excludeSun = 9;
     private List<Food> Foods = new ArrayList<>();
-    private List < Food > Dairy = new ArrayList();
-    private List < Food > Protein = new ArrayList();
-    private List < Food > Vegetable = new ArrayList();
-    private List < Food > Fruit = new < Food > ArrayList();
-    private List < Food > Grains = new ArrayList();
-    private List < Food > CheatFoodMon = new ArrayList();
-    private List < Food > CheatFoodTues = new ArrayList();
-    private List < Food > CheatFoodWeds = new ArrayList();
-    private List < Food > CheatFoodThurs = new ArrayList();
-    private List < Food > CheatFoodFri = new ArrayList();
-    private List < Food > CheatFoodSat = new ArrayList();
-    private List < Food > CheatFoodSun = new ArrayList();
-    private List < Food > Monday = new ArrayList();
-    private List < Food > Tuesday = new ArrayList();
-    private List < Food > Wedsnday = new ArrayList();
-    private List < Food > Thursday = new ArrayList();
-    private List < Food > Friday = new ArrayList();
-    private List < Food > Saturday = new ArrayList();
-    private List < Food > Sunday = new ArrayList();
+    private List<Food> Dairy = new ArrayList();
+    private List<Food> Protein = new ArrayList();
+    private List<Food> Vegetable = new ArrayList();
+    private List<Food> Fruit = new < Food > ArrayList();
+    private List<Food> Grains = new ArrayList();
+    private List<Food> CheatFoodMon = new ArrayList();
+    private List<Food> CheatFoodTues = new ArrayList();
+    private List<Food> CheatFoodWeds = new ArrayList();
+    private List<Food> CheatFoodThurs = new ArrayList();
+    private List<Food> CheatFoodFri = new ArrayList();
+    private List<Food> CheatFoodSat = new ArrayList();
+    private List<Food> CheatFoodSun = new ArrayList();
+    private List<Food> Monday = new ArrayList();
+    private List<Food> Tuesday = new ArrayList();
+    private List<Food> Wedsnday = new ArrayList();
+    private List<Food> Thursday = new ArrayList();
+    private List<Food> Friday = new ArrayList();
+    private List<Food> Saturday = new ArrayList();
+    private List<Food> Sunday = new ArrayList();
     
     
 	public void populateLists() {
@@ -424,6 +424,7 @@ public class Preference {
 	//End screen printer
     public void printMonday() {
     	System.out.println("Runs");
+    	System.out.println(Monday.size());
         for (Food F: Monday) {
             System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
@@ -458,5 +459,10 @@ public class Preference {
             System.out.println(F.getname() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
+    
+//	Run Cheat Pickers Here
+    public void runRandomize() {
+    		randomize();
+    }
 }
 
