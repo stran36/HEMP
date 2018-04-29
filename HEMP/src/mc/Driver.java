@@ -13,7 +13,7 @@ public class Driver extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		GUI gui = new GUI();
 		Scene scene = new Scene(gui);
-		scene.getStylesheets().add("app/styles.css");
+		scene.getStylesheets().add("mc/styles.css");
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);
 		primaryStage.show();
