@@ -471,5 +471,61 @@ public class Preference {
             System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
 		}
 	}
+    
+    public String getMonFood() {
+    	String food = "";
+    	for (Food F: Monday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+		}
+    		return food;
+    }
+    
+    public String getTueFood() {
+    	String food = "";
+    	for (Food F: Tuesday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
+		}
+    		return food;
+    }
+    
+    public String getWedFood() {
+    	String food = "";
+    	for (Food F: Wedsnday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
+		}
+    		return food;
+    }
+    
+    public String getThuFood() {
+    	String food = "";
+    	for (Food F: Thursday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+		}
+    		return food;
+    }
+    
+    public String getFriFood() {
+    	String food = "";
+    	for (Food F: Friday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+		}
+    		return food;
+    }
+    
+    public String getSatFood() {
+    	String food = "";
+    	for (Food F: Saturday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+		}
+    		return food;
+    }
+    
+    public String getSunFood() {
+    	String food = "";
+    	for (Food F: Sunday) {
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+		}
+    		return food;
+    }
 }
 

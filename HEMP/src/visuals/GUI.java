@@ -14,6 +14,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -28,6 +29,7 @@ import javafx.scene.text.TextAlignment;
 
 public class GUI extends BorderPane {
 
+	private VBox login;
 	private VBox scene1;
 	private VBox scene2;
 	private VBox scene3;
@@ -45,6 +47,7 @@ public class GUI extends BorderPane {
 		this.setMaxSize(WIDTH, HEIGHT);
 		this.setMinSize(WIDTH, HEIGHT);
 		this.getStyleClass().add("body");
+		createLogin();
 		createScene2();
 		createScene3();
 		createScene1();
@@ -52,6 +55,31 @@ public class GUI extends BorderPane {
 		setScene2Background();
 		setScene3Background();
 		setTitle();
+	}
+	
+	// Create Scene 0 (Login)
+	public void createLogin() {
+		login = new VBox();
+		login.getStyleClass().add("boxes");
+		
+		Label username = new Label("User Name:");
+		TextField inputName = new TextField("John Doe");
+		HBox org1 = new HBox();
+		org1.getChildren().addAll(username,inputName);
+		
+		
+		Label password = new Label("Password:");
+		TextField inputPass = new TextField("******");
+		HBox org2 = new HBox();
+		org2.getChildren().addAll(password,inputPass);
+		
+		Button b = new Button("Login");
+		switchFromLogin(b);
+		
+		login.getChildren().addAll(org1,org2,b);
+		
+		this.setCenter(login);
+		
 	}
 
 	// Create Scene 1
@@ -140,22 +168,6 @@ public class GUI extends BorderPane {
 			}
 		});
 
-		// Label "Choose your Age"
-		Label age = new Label("Choose Your Age!");
-		age.getStyleClass().add("labels");
-
-		// Generate ages into String Array Form
-		String[] ageArray = new String[100];
-		for (int i = 1; i <= 100; i++) {
-			ageArray[i - 1] = String.valueOf(i);
-		}
-		ObservableList<String> ageOptions = FXCollections.observableArrayList(ageArray);
-
-		// Fill "Choose you Age" ChoiceBox
-		ageBox.getItems().addAll(ageOptions);
-		ageBox.setPrefWidth(100);
-		ageBox.setVisibleRowCount(4);
-
 		// Button and Label for finish
 		Label finish = new Label("Finished?");
 		Button switch_button = new Button("Click Here!!");
@@ -164,8 +176,6 @@ public class GUI extends BorderPane {
 		// Put each label ComboBox into a HorizontalBox
 		horizontalBox1.getChildren().addAll(bodyGoal, choices);
 		horizontalBox1.setAlignment(Pos.BASELINE_CENTER);
-		horizontalBox2.getChildren().addAll(age, ageBox);
-		horizontalBox2.setAlignment(Pos.BASELINE_CENTER);
 		horizontalBox3.getChildren().addAll(finish, switch_button);
 		horizontalBox3.setAlignment(Pos.BASELINE_CENTER);
 
@@ -174,7 +184,7 @@ public class GUI extends BorderPane {
 				emptyBoxPrinter(), emptyBoxPrinter(), horizontalBox3, emptyBoxPrinter());
 		scene1.setAlignment(Pos.CENTER);
 		scene1.setAlignment(Pos.TOP_CENTER);
-		this.setCenter(scene1);
+		//this.setCenter(scene1);
 
 	}
 
@@ -249,7 +259,7 @@ public class GUI extends BorderPane {
 		scene2.getChildren().addAll(horizontalBox, buttonBox);
 
 		// Adding Scene to BorderPane (Parent)
-		this.setCenter(scene2);
+		//this.setCenter(scene2);
 
 	}
 
@@ -290,44 +300,65 @@ public class GUI extends BorderPane {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
 		
+//		Output Test using Preference class
 		Preference test = new Preference();
 		test.preference(1);
-		test.populateLists();
 		test.cheatpickerMon("Burger");
 		test.cheatpickerTues("Burger");
 		test.cheatpickerWeds("Burger");
 		test.cheatpickerThurs("Burger");
 		test.cheatpickerFri("Burger");
-//		test.randomize();
+		test.cheatpickerSat("Burger");
+		test.cheatpickerSun("Burger");
 		
-//		test.printMonday();
-//		test.printTuesday();
-//		test.printWedsnday();
-//		test.printThursday();
-//		test.printFriday();
-//		test.printSaturday();
-		
+		test.randomize();
 		
 		TabPane tabPane = new TabPane();
 
 		Tab monTab = new Tab();
 		monTab.setText("Monday");
+		Label monText = new Label();
+		monText.setWrapText(true);
+		monText.setTextAlignment(TextAlignment.CENTER);
+		monText.setPrefSize(HEIGHT, WIDTH);
+		monText.setText(test.getMonFood());
+		monTab.setContent(monText);
 		tabPane.getTabs().add(monTab);
 		
 		Tab tueTab = new Tab();
 		tueTab.setText("Tuesday");
+		Label tueText = new Label();
+		tueText.setWrapText(true);
+		tueText.setTextAlignment(TextAlignment.CENTER);
+		tueText.setPrefSize(HEIGHT, WIDTH);
+		tueText.setText(test.getTueFood());
 		tabPane.getTabs().add(tueTab);
 		
 		Tab wedTab = new Tab();
 		wedTab.setText("Wednesday");
+		Label wedText = new Label();
+		wedText.setWrapText(true);
+		wedText.setTextAlignment(TextAlignment.CENTER);
+		wedText.setPrefSize(HEIGHT, WIDTH);
+		wedText.setText(test.getWedFood());
 		tabPane.getTabs().add(wedTab);
 		
 		Tab thuTab = new Tab();
 		thuTab.setText("Thursday");
+		Label thuText = new Label();
+		thuText.setWrapText(true);
+		thuText.setTextAlignment(TextAlignment.CENTER);
+		thuText.setPrefSize(HEIGHT, WIDTH);
+		thuText.setText(test.getThuFood());
 		tabPane.getTabs().add(thuTab);
 		
 		Tab friTab = new Tab();
 		friTab.setText("Friday");
+		Label friText = new Label();
+		friText.setWrapText(true);
+		friText.setTextAlignment(TextAlignment.CENTER);
+		friText.setPrefSize(HEIGHT, WIDTH);
+		friText.setText(test.getFriFood());
 		tabPane.getTabs().add(friTab);
 		
 		scene3.getChildren().add(tabPane);
@@ -394,8 +425,6 @@ public class GUI extends BorderPane {
 		// then you set to your node
 		scene1.setBackground(new Background(myBI));
 	}
-	
-	//testing
 
 	// Set Scene 2 picture
 	public void setScene2Background() {
@@ -425,6 +454,13 @@ public class GUI extends BorderPane {
 		scene3.setBackground(new Background(myBI));
 	}
 	
+//	Switch from Login
+	private void switchFromLogin(Button button) {
+		button.setOnAction(e ->{
+			this.setCenter(scene1);
+		});
+	}
+	
 	// Switch to Scene1
 	public void switchToScene1(Button button) {
 		button.setOnAction(e -> {
@@ -436,20 +472,13 @@ public class GUI extends BorderPane {
 	public void switchToScene2(Button button) {
 
 		button.setOnAction(e -> {
-			if (choices.getSelectionModel().isEmpty() == false && ageBox.getSelectionModel().isEmpty() == false) {
+			if (choices.getSelectionModel().isEmpty() == false) {
 				this.setCenter(scene2);
 			} else {
 				if (choices.getSelectionModel().isEmpty()) {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Error in body type input");
 					alert.setContentText("Please select a body type.");
-					alert.showAndWait();
-				}
-
-				if (ageBox.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in age input");
-					alert.setContentText("Please select an age.");
 					alert.showAndWait();
 				}
 			}
