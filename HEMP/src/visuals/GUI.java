@@ -3,6 +3,7 @@ package visuals;
 import calculations.Preference;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -23,6 +24,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
@@ -61,22 +63,30 @@ public class GUI extends BorderPane {
 	public void createLogin() {
 		login = new VBox();
 		login.getStyleClass().add("boxes");
+		login.setAlignment(Pos.CENTER);
 		
-		Label username = new Label("User Name:");
+		// Gridpane for textfields
+		GridPane gridPane = new GridPane();
+		gridPane.setPadding(new Insets(20,20,20,20));
+		gridPane.setHgap(5);
+		gridPane.setVgap(5);
+		gridPane.setAlignment(Pos.CENTER);	
+		
+		Label username = new Label("User Name: ");
 		TextField inputName = new TextField("John Doe");
-		HBox org1 = new HBox();
-		org1.getChildren().addAll(username,inputName);
-		
-		
-		Label password = new Label("Password:");
+			
+		Label password = new Label("Password: ");
 		TextField inputPass = new TextField("******");
-		HBox org2 = new HBox();
-		org2.getChildren().addAll(password,inputPass);
+		
+		gridPane.add(username, 0, 0);
+		gridPane.add(inputName, 1, 0);
+		gridPane.add(password, 0, 1);
+		gridPane.add(inputPass, 1, 1);
 		
 		Button b = new Button("Login");
 		switchFromLogin(b);
 		
-		login.getChildren().addAll(org1,org2,b);
+		login.getChildren().addAll(gridPane,b);
 		
 		this.setCenter(login);
 		
@@ -128,8 +138,6 @@ public class GUI extends BorderPane {
 		// Picture changes for Body Goal
 		choices.setOnAction((event) -> {
 			if (choices.getSelectionModel().isSelected(0)) {
-				System.out.println("Your body goal is: " + choices.getSelectionModel().getSelectedItem());
-
 				// Show Slim Body Picture
 				Node[] arrayNode = { invisibleImage(), imageView1, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
@@ -138,8 +146,6 @@ public class GUI extends BorderPane {
 			}
 
 			if (choices.getSelectionModel().isSelected(1)) {
-				System.out.println("Your body goal is: " + choices.getSelectionModel().getSelectedItem());
-
 				// Show Healthy Body Picture
 				Node[] arrayNode = { invisibleImage(), imageView2, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
@@ -148,8 +154,6 @@ public class GUI extends BorderPane {
 			}
 
 			if (choices.getSelectionModel().isSelected(2)) {
-				System.out.println("Your body goal is: " + choices.getSelectionModel().getSelectedItem());
-
 				// Show Body Builder Picture
 				Node[] arrayNode = { invisibleImage(), imageView3, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
@@ -158,8 +162,6 @@ public class GUI extends BorderPane {
 			}
 
 			if (choices.getSelectionModel().isSelected(3)) {
-				System.out.println("Your body goal is: " + choices.getSelectionModel().getSelectedItem());
-
 				// Show Strict Diet Picture
 				Node[] arrayNode = { invisibleImage(), imageView4, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
@@ -220,13 +222,14 @@ public class GUI extends BorderPane {
 		Label sunday = scene2LabelSetup("Sunday", "days");
 
 		// Populating ComboBoxes with Different food Items
-		scene2ComboBox1.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox2.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox3.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox4.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox5.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox6.getItems().addAll("Food1", "Food2", "Food3", "Food4");
-		scene2ComboBox7.getItems().addAll("Food1", "Food2", "Food3", "Food4");
+		// French,Italian,American,Asian,Salad,Burger,Steak,Vegetarian
+		scene2ComboBox1.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox2.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox3.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox4.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox5.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox6.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
+		scene2ComboBox7.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
 
 		String sampleParagraph = "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.";
 
@@ -304,23 +307,25 @@ public class GUI extends BorderPane {
 		Preference test = new Preference();
 		test.preference(1);
 		test.cheatpickerMon("Burger");
-		test.cheatpickerTues("Burger");
-		test.cheatpickerWeds("Burger");
-		test.cheatpickerThurs("Burger");
+		test.cheatpickerTues("Salad");
+		test.cheatpickerWeds("Salad");
+		test.cheatpickerThurs("Italian");
 		test.cheatpickerFri("Burger");
 		test.cheatpickerSat("Burger");
 		test.cheatpickerSun("Burger");
 		
 		test.randomize();
-		
+		//	Creating the TabPane (parent)
 		TabPane tabPane = new TabPane();
 
+		// Creating Tabs to add to TabPane (children)
 		Tab monTab = new Tab();
 		monTab.setText("Monday");
 		Label monText = new Label();
 		monText.setWrapText(true);
 		monText.setTextAlignment(TextAlignment.CENTER);
 		monText.setPrefSize(HEIGHT, WIDTH);
+		monText.setAlignment(Pos.CENTER);
 		monText.setText(test.getMonFood());
 		monTab.setContent(monText);
 		tabPane.getTabs().add(monTab);
@@ -331,7 +336,9 @@ public class GUI extends BorderPane {
 		tueText.setWrapText(true);
 		tueText.setTextAlignment(TextAlignment.CENTER);
 		tueText.setPrefSize(HEIGHT, WIDTH);
+		tueText.setAlignment(Pos.CENTER);
 		tueText.setText(test.getTueFood());
+		tueTab.setContent(tueText);
 		tabPane.getTabs().add(tueTab);
 		
 		Tab wedTab = new Tab();
@@ -340,7 +347,9 @@ public class GUI extends BorderPane {
 		wedText.setWrapText(true);
 		wedText.setTextAlignment(TextAlignment.CENTER);
 		wedText.setPrefSize(HEIGHT, WIDTH);
+		wedText.setAlignment(Pos.CENTER);
 		wedText.setText(test.getWedFood());
+		wedTab.setContent(wedText);
 		tabPane.getTabs().add(wedTab);
 		
 		Tab thuTab = new Tab();
@@ -350,6 +359,7 @@ public class GUI extends BorderPane {
 		thuText.setTextAlignment(TextAlignment.CENTER);
 		thuText.setPrefSize(HEIGHT, WIDTH);
 		thuText.setText(test.getThuFood());
+		thuTab.setContent(thuText);
 		tabPane.getTabs().add(thuTab);
 		
 		Tab friTab = new Tab();
@@ -358,8 +368,32 @@ public class GUI extends BorderPane {
 		friText.setWrapText(true);
 		friText.setTextAlignment(TextAlignment.CENTER);
 		friText.setPrefSize(HEIGHT, WIDTH);
+		friText.setAlignment(Pos.CENTER);
 		friText.setText(test.getFriFood());
+		friTab.setContent(friText);
 		tabPane.getTabs().add(friTab);
+		
+		Tab satTab = new Tab();
+		satTab.setText("Saturday");
+		Label satText = new Label();
+		satText.setWrapText(true);
+		satText.setTextAlignment(TextAlignment.CENTER);
+		satText.setPrefSize(HEIGHT, WIDTH);
+		satText.setAlignment(Pos.CENTER);
+		satText.setText(test.getSatFood());
+		satTab.setContent(satText);
+		tabPane.getTabs().add(satTab);
+		
+		Tab sunTab = new Tab();
+		sunTab.setText("Sunday");
+		Label sunText = new Label();
+		sunText.setWrapText(true);
+		sunText.setTextAlignment(TextAlignment.CENTER);
+		sunText.setPrefSize(HEIGHT, WIDTH);
+		sunText.setAlignment(Pos.CENTER);
+		sunText.setText(test.getSunFood());
+		sunTab.setContent(sunText);
+		tabPane.getTabs().add(sunTab);
 		
 		scene3.getChildren().add(tabPane);
 		
