@@ -1,8 +1,6 @@
 package visuals;
 
 import calculations.Preference;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -358,6 +356,7 @@ public class GUI extends BorderPane {
 		thuText.setWrapText(true);
 		thuText.setTextAlignment(TextAlignment.CENTER);
 		thuText.setPrefSize(HEIGHT, WIDTH);
+		thuText.setAlignment(Pos.CENTER);
 		thuText.setText(test.getThuFood());
 		thuTab.setContent(thuText);
 		tabPane.getTabs().add(thuTab);

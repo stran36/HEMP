@@ -1,4 +1,4 @@
-package app;
+package mc;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

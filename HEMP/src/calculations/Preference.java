@@ -475,7 +475,7 @@ public class Preference {
     public String getMonFood() {
     	String food = "";
     	for (Food F: Monday) {
-            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
 		}
     		return food;
     }
@@ -499,7 +499,7 @@ public class Preference {
     public String getThuFood() {
     	String food = "";
     	for (Food F: Thursday) {
-            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
 		}
     		return food;
     }
@@ -507,7 +507,7 @@ public class Preference {
     public String getFriFood() {
     	String food = "";
     	for (Food F: Friday) {
-            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories" + "\n";
 		}
     		return food;
     }
@@ -515,7 +515,7 @@ public class Preference {
     public String getSatFood() {
     	String food = "";
     	for (Food F: Saturday) {
-            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
 		}
     		return food;
     }
@@ -523,7 +523,7 @@ public class Preference {
     public String getSunFood() {
     	String food = "";
     	for (Food F: Sunday) {
-            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories";
+            food += F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories " + "\n";
 		}
     		return food;
     }
