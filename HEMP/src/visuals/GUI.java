@@ -108,7 +108,7 @@ public class GUI extends BorderPane {
 		bodyGoal.getStyleClass().add("labels");
 
 		// Fill "Body Type" ChoiceBox
-		choices.getItems().addAll("Slim", "Healthy", "Body Builder", "Strict Diet");
+		choices.getItems().addAll("Bulking", "Maintaining Weight", "Losing Weight");
 
 		// Set action for "Body Type" ChoiceBox or change picture based on body type
 		// choice
@@ -119,24 +119,19 @@ public class GUI extends BorderPane {
 		Group scene1Group1 = new Group();
 		scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 
-		Image image1 = new Image("http://clipart-library.com/images/qcBobppXi.png");
+		Image image1 = new Image("http://mariafresa.net/data_gallery/snatch-overhead-squat-weightlifting-olympic-weightlifting-nick-Kjqjgz-clipart.jpg");
 		ImageView imageView1 = imageViewSetup(image1);
 
-		Image image2 = new Image(
-				"https://thumb7.shutterstock.com/display_pic_with_logo/3814334/571041247/stock-vector-body-workout-stretching-exercises-healthy-life-style-concept-stick-figure-pictogram-icon-571041247.jpg");
+		Image image2 = new Image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjKaJfyBlo4GSxJTuMCRmt93Jkvl4_BjPgi-wPNgRqkyLYRJbj");
 		ImageView imageView2 = imageViewSetup(image2);
 
-		Image image3 = new Image(
-				"http://mariafresa.net/data_gallery/snatch-overhead-squat-weightlifting-olympic-weightlifting-nick-Kjqjgz-clipart.jpg");
+		Image image3 = new Image("http://drmarkkemenoshandassociates.com/wp-content/uploads/2016/12/Stick-Figure-Running-Man.png");
 		ImageView imageView3 = imageViewSetup(image3);
-
-		Image image4 = new Image("https://cdn3.iconfinder.com/data/icons/vacation-4/32/vacation_29-512.png");
-		ImageView imageView4 = imageViewSetup(image4);
 
 		// Picture changes for Body Goal
 		choices.setOnAction((event) -> {
 			if (choices.getSelectionModel().isSelected(0)) {
-				// Show Slim Body Picture
+				// Show Bulking Body Picture
 				Node[] arrayNode = { invisibleImage(), imageView1, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
 				resetHBox(bodyTypePictureBox1, arrayNode);
@@ -144,7 +139,7 @@ public class GUI extends BorderPane {
 			}
 
 			if (choices.getSelectionModel().isSelected(1)) {
-				// Show Healthy Body Picture
+				// Show Maintaining Weight Body Picture
 				Node[] arrayNode = { invisibleImage(), imageView2, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
 				resetHBox(bodyTypePictureBox1, arrayNode);
@@ -152,20 +147,13 @@ public class GUI extends BorderPane {
 			}
 
 			if (choices.getSelectionModel().isSelected(2)) {
-				// Show Body Builder Picture
+				// Show Losing Weight Picture
 				Node[] arrayNode = { invisibleImage(), imageView3, invisibleImage(), invisibleImage() };
 				scene1Group1.getChildren().clear();
 				resetHBox(bodyTypePictureBox1, arrayNode);
 				scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 			}
 
-			if (choices.getSelectionModel().isSelected(3)) {
-				// Show Strict Diet Picture
-				Node[] arrayNode = { invisibleImage(), imageView4, invisibleImage(), invisibleImage() };
-				scene1Group1.getChildren().clear();
-				resetHBox(bodyTypePictureBox1, arrayNode);
-				scene1Group1.getChildren().addAll(bodyTypePictureBox1);
-			}
 		});
 
 		// Button and Label for finish
