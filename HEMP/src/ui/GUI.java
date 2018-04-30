@@ -427,7 +427,7 @@ public class GUI extends BorderPane {
 		topBox.setAlignment(Pos.CENTER);
 		
 		BackgroundImage myBI = new BackgroundImage(
-				new Image("Title.png", WIDTH,
+				new Image("Scene1BackGround.jpg", WIDTH,
 						HEIGHT, false, true),
 				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
