@@ -3,7 +3,7 @@ package mc;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import visuals.GUI;
+import ui.GUI;
 
 public class Driver extends Application{
 	

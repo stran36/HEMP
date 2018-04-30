@@ -1,4 +1,4 @@
-package visuals;
+package ui;
 
 import calculations.Preference;
 import javafx.geometry.Insets;
@@ -57,7 +57,7 @@ public class GUI extends BorderPane {
 		setTitle();
 	}
 	
-	// Create Scene 0 (Login)
+	// Create Scene 0 (Login Module)
 	public void createLogin() {
 		login = new VBox();
 		login.getStyleClass().add("boxes");
@@ -90,7 +90,7 @@ public class GUI extends BorderPane {
 		
 	}
 
-	// Create Scene 1
+	// Create Scene 1 (Goal Scene)
 	public void createScene1() {
 		scene1 = new VBox();
 		scene1.getStyleClass().add("boxes");
@@ -176,7 +176,7 @@ public class GUI extends BorderPane {
 
 	}
 
-	// Create Scene 2
+	// Create Scene 2 (Cheat Food Scene)
 	public void createScene2() {
 		scene2 = new VBox();
 		scene2.getStyleClass().add("boxes");
@@ -217,7 +217,7 @@ public class GUI extends BorderPane {
 		scene2ComboBox6.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
 		scene2ComboBox7.getItems().addAll("French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian");
 
-		String sampleParagraph = "The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.";
+		String sampleParagraph = "Choose some cheat foods! It is ok to have a break once in a while. Grab a burger or some pizza! HEMP lets you choose one of those delicious foods, 1 per day. Sounds good right?!";
 
 		Label description = new Label();
 		description.getStyleClass().add("des");
@@ -251,40 +251,8 @@ public class GUI extends BorderPane {
 		//this.setCenter(scene2);
 
 	}
-
-	// Scene2 Label Setup
-	public Label scene2LabelSetup(String text, String style) {
-		Label l = new Label();
-		// Set text for label
-		l.setText(text);
-
-		// Set text alignment in label
-		l.setAlignment(Pos.CENTER);
-
-		// Set style for label
-		l.getStyleClass().add(style);
-
-		// This sets the box width for the label
-		l.setPrefWidth(90);
-
-		return l;
-	}
-
-	// Scene2 putting Label and ChoiceBox into HBox
-	@SuppressWarnings("rawtypes")
-	public HBox scene2WeekdayFoodHBox(Label l, ChoiceBox cb) {
-		HBox hBox = new HBox(8);
-
-		// Put label and choicebox inside HBox
-		hBox.getChildren().addAll(l, cb);
-
-		// Width of choicebox
-		cb.setPrefWidth(100);
-
-		return hBox;
-	}
-
-	// Create Scene 3
+	
+	// Create Scene 3 (Display Module/Scene)
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
@@ -385,6 +353,38 @@ public class GUI extends BorderPane {
 		scene3.getChildren().add(tabPane);
 		
 		
+	}
+
+	// Scene2 Label Setup
+	public Label scene2LabelSetup(String text, String style) {
+		Label l = new Label();
+		// Set text for label
+		l.setText(text);
+
+		// Set text alignment in label
+		l.setAlignment(Pos.CENTER);
+
+		// Set style for label
+		l.getStyleClass().add(style);
+
+		// This sets the box width for the label
+		l.setPrefWidth(90);
+
+		return l;
+	}
+
+	// Scene2 putting Label and ChoiceBox into HBox
+	@SuppressWarnings("rawtypes")
+	public HBox scene2WeekdayFoodHBox(Label l, ChoiceBox cb) {
+		HBox hBox = new HBox(8);
+
+		// Put label and choicebox inside HBox
+		hBox.getChildren().addAll(l, cb);
+
+		// Width of choicebox
+		cb.setPrefWidth(100);
+
+		return hBox;
 	}
 
 	// Return invisible Image

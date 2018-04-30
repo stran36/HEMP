@@ -75,7 +75,6 @@ public class Preference {
 	Foods.add(new Food("Shinsengumi Ice Cream",0,150,"Asian","Vegetarian"));
 	Foods.add(new Food("LaCroix Cheesecake",1,200, "French", "Vegetarian"));
 	}
-	
 	// Tag options for drop down menu French,Italian,American,Asian,Salad,Burger,Steak,Vegetarian
 	
 	
@@ -297,7 +296,7 @@ public class Preference {
 		randomize();
 	}
 	
-    // after cheat food input interface
+    // after cheat food input interface (Randomizer Module)
 	public void randomize() {
         Random R = new Random();
         int CFM = R.nextInt(CheatFoodMon.size());
@@ -388,6 +387,7 @@ public class Preference {
 		Saturday.add(CheatFoodSat.get(CFSA));
 		Sunday.add(CheatFoodSun.get(CFSU));
 	}
+	
 	//End screen printer
 	private void remove() {
 		 
@@ -435,42 +435,8 @@ public class Preference {
 		}
 		
 	}
-	
-    public void printMonday() {
-        for (Food F: Monday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printTuesday() {
-        for (Food F: Tuesday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printWedsnday() {
-        for (Food F: Wedsnday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printThursday() {
-        for (Food F: Thursday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printFriday() {
-        for (Food F: Friday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printSaturday() {
-        for (Food F: Saturday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
-    public void printSunday() {
-        for (Food F: Sunday) {
-            System.out.println(F.getName() + " " + F.getTypeName() + " " + F.getCalorie() + " calories");
-		}
-	}
+    
+    // Getters for Suggested Meals
     
     public String getMonFood() {
     	String food = "";
