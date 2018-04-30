@@ -262,7 +262,7 @@ public class GUI extends BorderPane {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
 		
-//		Output Test using Preference class
+		// Output Test using Preference class
 		Cheat test = new Cheat();
 		test.preference(1);
 		test.cheatpickerMon("Burger");
@@ -427,7 +427,7 @@ public class GUI extends BorderPane {
 		topBox.setAlignment(Pos.CENTER);
 		
 		BackgroundImage myBI = new BackgroundImage(
-				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
+				new Image("Title.png", WIDTH,
 						HEIGHT, false, true),
 				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
@@ -443,7 +443,7 @@ public class GUI extends BorderPane {
 		// URL for main fruit Image
 		// https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg
 		BackgroundImage myBI = new BackgroundImage(
-				new Image("https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg", WIDTH,
+				new Image("Scene1BackGround.jpg", WIDTH,
 						HEIGHT, false, true),
 				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
 				BackgroundSize.DEFAULT);
@@ -458,7 +458,7 @@ public class GUI extends BorderPane {
 		// URL for Scene2 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
-				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
+				"Scene2BackGround.jpg",
 				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
@@ -472,7 +472,7 @@ public class GUI extends BorderPane {
 		// URL for Scene3 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
 		BackgroundImage myBI = new BackgroundImage(new Image(
-				"https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg",
+				"Scene3BackGround.jpg",
 				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
 				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
