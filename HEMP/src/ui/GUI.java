@@ -1,6 +1,6 @@
 package ui;
 
-import calculations.Preference;
+import calculations.Cheat;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Group;
@@ -258,7 +258,7 @@ public class GUI extends BorderPane {
 		scene3.getStyleClass().add("boxes");
 		
 //		Output Test using Preference class
-		Preference test = new Preference();
+		Cheat test = new Cheat();
 		test.preference(1);
 		test.cheatpickerMon("Burger");
 		test.cheatpickerTues("Salad");

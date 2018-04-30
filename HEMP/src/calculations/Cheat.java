@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Preference {
+public class Cheat {
     private int age = 35;
     private int goal;
     private String name = "John Doe";
@@ -78,7 +78,7 @@ public class Preference {
 	// Tag options for drop down menu French,Italian,American,Asian,Salad,Burger,Steak,Vegetarian
 	
 	
-	// constructor used after user interacts with goal module
+	// Goal Module
     public void preference(int goal) {
     		populateLists();
         this.goal = goal;
@@ -494,4 +494,5 @@ public class Preference {
     		return food;
     }
 }
+
 
