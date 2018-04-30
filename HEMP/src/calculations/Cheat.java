@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Cheat {
-    private int age = 35;
+//    private int age = 35;
     private int goal;
-    private String name = "John Doe";
+//    private String name = "John Doe";
     private int reccomended = 2600;
     private String goalname;
     private double p;
@@ -92,6 +92,7 @@ public class Cheat {
         goalcalc();
         org();
 	}
+    
     private void goalcalc() {
         if (goal == 0) {
             p = 0.40 * reccomended;
