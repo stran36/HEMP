@@ -136,6 +136,7 @@ public class GUI extends BorderPane {
 		Group scene1Group1 = new Group();
 		scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 
+		//Images for scene1
 		Image image1 = new Image(
 				"Image1.jpg");
 		ImageView imageView1 = imageViewSetup(image1);
