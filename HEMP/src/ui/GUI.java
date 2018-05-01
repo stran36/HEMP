@@ -44,7 +44,7 @@ public class GUI extends BorderPane {
 
 	// ChoiceBox for "Choose Your Age!"
 	ComboBox<String> ageBox = new ComboBox<String>();
-	
+
 	// ChoiceBoxes for "Scene2"
 	ChoiceBox<String> scene2ComboBox1 = new ChoiceBox<>();
 	ChoiceBox<String> scene2ComboBox2 = new ChoiceBox<>();
@@ -53,10 +53,10 @@ public class GUI extends BorderPane {
 	ChoiceBox<String> scene2ComboBox5 = new ChoiceBox<>();
 	ChoiceBox<String> scene2ComboBox6 = new ChoiceBox<>();
 	ChoiceBox<String> scene2ComboBox7 = new ChoiceBox<>();
-	
-	//ChoiceBox Array for "Scene2"
-	ChoiceBox [] scene2ChoiceBoxes = {scene2ComboBox1, scene2ComboBox2, scene2ComboBox3, 
-			scene2ComboBox4, scene2ComboBox5, scene2ComboBox6, scene2ComboBox7};
+
+	// ChoiceBox Array for "Scene2"
+	ChoiceBox[] scene2ChoiceBoxes = { scene2ComboBox1, scene2ComboBox2, scene2ComboBox3, scene2ComboBox4,
+			scene2ComboBox5, scene2ComboBox6, scene2ComboBox7 };
 
 	// Setting for main program window
 	public GUI() {
@@ -72,38 +72,38 @@ public class GUI extends BorderPane {
 		setScene3Background();
 		setTitle();
 	}
-	
+
 	// Create Scene 0 (Login Module)
 	public void createLogin() {
 		login = new VBox();
 		login.getStyleClass().add("boxes");
 		login.setAlignment(Pos.CENTER);
-		
+
 		// Gridpane for textfields
 		GridPane gridPane = new GridPane();
-		gridPane.setPadding(new Insets(20,20,20,20));
+		gridPane.setPadding(new Insets(20, 20, 20, 20));
 		gridPane.setHgap(5);
 		gridPane.setVgap(5);
-		gridPane.setAlignment(Pos.CENTER);	
-		
+		gridPane.setAlignment(Pos.CENTER);
+
 		Label username = new Label("User Name: ");
 		TextField inputName = new TextField("John Doe");
-			
+
 		Label password = new Label("Password: ");
 		TextField inputPass = new TextField("******");
-		
+
 		gridPane.add(username, 0, 0);
 		gridPane.add(inputName, 1, 0);
 		gridPane.add(password, 0, 1);
 		gridPane.add(inputPass, 1, 1);
-		
+
 		Button b = new Button("Login");
 		switchFromLogin(b);
-		
-		login.getChildren().addAll(gridPane,b);
-		
+
+		login.getChildren().addAll(gridPane, b);
+
 		this.setCenter(login);
-		
+
 	}
 
 	// Create Scene 1 (Goal Scene)
@@ -125,6 +125,7 @@ public class GUI extends BorderPane {
 
 		// Fill "Body Type" ChoiceBox
 		choices.getItems().addAll("Bulking", "Maintaining Weight", "Losing Weight");
+		choices.getSelectionModel().select("Maintaining Weight");
 
 		// Set action for "Body Type" ChoiceBox or change picture based on body type
 		// choice
@@ -135,14 +136,22 @@ public class GUI extends BorderPane {
 		Group scene1Group1 = new Group();
 		scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 
-		Image image1 = new Image("http://mariafresa.net/data_gallery/snatch-overhead-squat-weightlifting-olympic-weightlifting-nick-Kjqjgz-clipart.jpg");
+		Image image1 = new Image(
+				"Image1.jpg");
 		ImageView imageView1 = imageViewSetup(image1);
 
-		Image image2 = new Image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjKaJfyBlo4GSxJTuMCRmt93Jkvl4_BjPgi-wPNgRqkyLYRJbj");
+		Image image2 = new Image(
+				"Image2.png");
 		ImageView imageView2 = imageViewSetup(image2);
 
-		Image image3 = new Image("http://drmarkkemenoshandassociates.com/wp-content/uploads/2016/12/Stick-Figure-Running-Man.png");
+		Image image3 = new Image(
+				"Image3.png");
 		ImageView imageView3 = imageViewSetup(image3);
+		
+		Node[] array = { invisibleImage(), imageView2, invisibleImage(), invisibleImage() };
+		scene1Group1.getChildren().clear();
+		resetHBox(bodyTypePictureBox1, array);
+		scene1Group1.getChildren().addAll(bodyTypePictureBox1);
 
 		// Picture changes for Body Goal
 		choices.setOnAction((event) -> {
@@ -188,7 +197,7 @@ public class GUI extends BorderPane {
 				emptyBoxPrinter(), emptyBoxPrinter(), horizontalBox3, emptyBoxPrinter());
 		scene1.setAlignment(Pos.CENTER);
 		scene1.setAlignment(Pos.TOP_CENTER);
-		//this.setCenter(scene1);
+		// this.setCenter(scene1);
 
 	}
 
@@ -216,9 +225,8 @@ public class GUI extends BorderPane {
 
 		// Populating ComboBoxes with Different food Items
 		// French,Italian,American,Asian,Salad,Burger,Steak,Vegetarian
-		String mealType [] = {"French","Italian","American","Asian","Salad","Burger","Steak","Vegetarian"};
-		for (ChoiceBox x : scene2ChoiceBoxes)
-		{
+		String mealType[] = { "French", "Italian", "American", "Asian", "Salad", "Burger", "Steak", "Vegetarian" };
+		for (ChoiceBox x : scene2ChoiceBoxes) {
 			x.getItems().addAll(mealType);
 		}
 
@@ -253,15 +261,15 @@ public class GUI extends BorderPane {
 		scene2.getChildren().addAll(horizontalBox, buttonBox);
 
 		// Adding Scene to BorderPane (Parent)
-		//this.setCenter(scene2);
+		// this.setCenter(scene2);
 
 	}
-	
+
 	// Create Scene 3 (Display Module/Scene)
 	public void createScene3() {
 		scene3 = new VBox();
 		scene3.getStyleClass().add("boxes");
-		
+
 		// Output Test using Preference class
 		Cheat test = new Cheat();
 		test.preference(1);
@@ -272,9 +280,9 @@ public class GUI extends BorderPane {
 		test.cheatpickerFri("Burger");
 		test.cheatpickerSat("Burger");
 		test.cheatpickerSun("Burger");
-		
+
 		test.randomize();
-		//	Creating the TabPane (parent)
+		// Creating the TabPane (parent)
 		TabPane tabPane = new TabPane();
 
 		// Creating Tabs to add to TabPane (children)
@@ -288,7 +296,7 @@ public class GUI extends BorderPane {
 		monText.setText(test.getMonFood());
 		monTab.setContent(monText);
 		tabPane.getTabs().add(monTab);
-		
+
 		Tab tueTab = new Tab();
 		tueTab.setText("Tuesday");
 		Label tueText = new Label();
@@ -299,7 +307,7 @@ public class GUI extends BorderPane {
 		tueText.setText(test.getTueFood());
 		tueTab.setContent(tueText);
 		tabPane.getTabs().add(tueTab);
-		
+
 		Tab wedTab = new Tab();
 		wedTab.setText("Wednesday");
 		Label wedText = new Label();
@@ -310,7 +318,7 @@ public class GUI extends BorderPane {
 		wedText.setText(test.getWedFood());
 		wedTab.setContent(wedText);
 		tabPane.getTabs().add(wedTab);
-		
+
 		Tab thuTab = new Tab();
 		thuTab.setText("Thursday");
 		Label thuText = new Label();
@@ -321,7 +329,7 @@ public class GUI extends BorderPane {
 		thuText.setText(test.getThuFood());
 		thuTab.setContent(thuText);
 		tabPane.getTabs().add(thuTab);
-		
+
 		Tab friTab = new Tab();
 		friTab.setText("Friday");
 		Label friText = new Label();
@@ -332,7 +340,7 @@ public class GUI extends BorderPane {
 		friText.setText(test.getFriFood());
 		friTab.setContent(friText);
 		tabPane.getTabs().add(friTab);
-		
+
 		Tab satTab = new Tab();
 		satTab.setText("Saturday");
 		Label satText = new Label();
@@ -343,7 +351,7 @@ public class GUI extends BorderPane {
 		satText.setText(test.getSatFood());
 		satTab.setContent(satText);
 		tabPane.getTabs().add(satTab);
-		
+
 		Tab sunTab = new Tab();
 		sunTab.setText("Sunday");
 		Label sunText = new Label();
@@ -354,10 +362,9 @@ public class GUI extends BorderPane {
 		sunText.setText(test.getSunFood());
 		sunTab.setContent(sunText);
 		tabPane.getTabs().add(sunTab);
-		
+
 		scene3.getChildren().add(tabPane);
-		
-		
+
 	}
 
 	// Scene2 Label Setup
@@ -417,7 +424,7 @@ public class GUI extends BorderPane {
 	// Set title
 	public void setTitle() {
 		VBox topBox = new VBox();
-		
+
 		Label title = new Label("Hemp!");
 		title.getStyleClass().add("title");
 
@@ -425,15 +432,12 @@ public class GUI extends BorderPane {
 
 		topBox.getChildren().addAll(title, description);
 		topBox.setAlignment(Pos.CENTER);
-		
-		BackgroundImage myBI = new BackgroundImage(
-				new Image("Scene1BackGround.jpg", WIDTH,
-						HEIGHT, false, true),
-				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-				BackgroundSize.DEFAULT);
-		
+
+		BackgroundImage myBI = new BackgroundImage(new Image("Scene1BackGround.jpg", WIDTH, HEIGHT, false, true),
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+
 		topBox.setBackground(new Background(myBI));
-		
+
 		this.setTop(topBox);
 	}
 
@@ -442,11 +446,8 @@ public class GUI extends BorderPane {
 
 		// URL for main fruit Image
 		// https://hdwallsource.com/img/2014/5/fruit-background-20359-20869-hd-wallpapers.jpg
-		BackgroundImage myBI = new BackgroundImage(
-				new Image("Scene1BackGround.jpg", WIDTH,
-						HEIGHT, false, true),
-				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-				BackgroundSize.DEFAULT);
+		BackgroundImage myBI = new BackgroundImage(new Image("Scene1BackGround.jpg", WIDTH, HEIGHT, false, true),
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
 		// then you set to your node
 		scene1.setBackground(new Background(myBI));
@@ -457,10 +458,8 @@ public class GUI extends BorderPane {
 
 		// URL for Scene2 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
-		BackgroundImage myBI = new BackgroundImage(new Image(
-				"Scene2BackGround.jpg",
-				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
-				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+		BackgroundImage myBI = new BackgroundImage(new Image("Scene2BackGround.jpg", WIDTH, HEIGHT, false, true),
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
 		// then you set to your node
 		scene2.setBackground(new Background(myBI));
@@ -471,22 +470,20 @@ public class GUI extends BorderPane {
 
 		// URL for Scene3 Image
 		// https://thumbs.dreamstime.com/z/yellow-notepad-paper-lines-red-margin-background-part-sheet-page-notebook-lecture-blue-61116275.jpg
-		BackgroundImage myBI = new BackgroundImage(new Image(
-				"Scene3BackGround.jpg",
-				WIDTH, HEIGHT, false, true), BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT,
-				BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
+		BackgroundImage myBI = new BackgroundImage(new Image("Scene3BackGround.jpg", WIDTH, HEIGHT, false, true),
+				BackgroundRepeat.ROUND, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
 
 		// then you set to your node
 		scene3.setBackground(new Background(myBI));
 	}
-	
+
 	// Switch from Login
 	private void switchFromLogin(Button button) {
-		button.setOnAction(e ->{
+		button.setOnAction(e -> {
 			this.setCenter(scene1);
 		});
 	}
-	
+
 	// Switch to Scene1
 	public void switchToScene1(Button button) {
 		button.setOnAction(e -> {
@@ -514,108 +511,37 @@ public class GUI extends BorderPane {
 	// Switch to Scene3
 	private void switchToScene3(Button button) {
 		button.setOnAction(e -> {
-			if (scene2ComboBox1.getSelectionModel().isEmpty() == false &&
-					scene2ComboBox2.getSelectionModel().isEmpty() == false &&
-					scene2ComboBox3.getSelectionModel().isEmpty() == false &&
-					scene2ComboBox4.getSelectionModel().isEmpty() == false &&
-					scene2ComboBox5.getSelectionModel().isEmpty() == false &&
-					scene2ComboBox6.getSelectionModel().isEmpty() == false) {
 			this.setCenter(scene3);
-			}
-			else {
-				
-				List<String> listOfMissingDays = new ArrayList<String>();
-				
-				for (int i = 0; i < 7; i++)
-				{
-					String day = "";
-					if (scene2ChoiceBoxes[i].getSelectionModel().isEmpty())
-					{
-						switch (i)
-						{
-							case 0: day = "Monday"; break;
-							case 1: day = "Tuesday"; break;
-							case 2: day = "Wednesday"; break;
-							case 3: day = "Thursday"; break;
-							case 4: day = "Friday"; break;
-							case 5: day = "Saturday"; break;
-							case 6: day = "Sunday"; break;
-							default: day = ""; break;
-						}
-						listOfMissingDays.add(day);
 
-					}
-				}
-				String errorInput = "";
-				for(int j = 0; j < listOfMissingDays.size(); j++)
-				{
-					if (listOfMissingDays.size() > 1)
-					{
-						if (j < listOfMissingDays.size() -1)
-						{
-							errorInput += listOfMissingDays.get(j) + ", ";
-						}
-						else
-						{
-							errorInput += listOfMissingDays.get(j);
-						}
-					}
-					else
-					{
-						errorInput += listOfMissingDays.get(j);
-					}
-				}
-				
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("Error in meal type input");
-				alert.setContentText("Please select a meal type for the following days: " + errorInput +  ".");
-				alert.showAndWait();
-				
-				/*
-				if (scene2ComboBox1.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Monday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox2.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Tuesday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox3.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Wednesday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox4.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Thursday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox6.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Friday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox7.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Saturday.");
-					alert.showAndWait();
-				}
-				if (scene2ComboBox7.getSelectionModel().isEmpty()) {
-					Alert alert = new Alert(AlertType.INFORMATION);
-					alert.setTitle("Error in meal type input");
-					alert.setContentText("Please select a meal type for Sunday.");
-					alert.showAndWait();
-				}
-				*/
-			}
+			/*
+			 * if (scene2ComboBox1.getSelectionModel().isEmpty() == false &&
+			 * scene2ComboBox2.getSelectionModel().isEmpty() == false &&
+			 * scene2ComboBox3.getSelectionModel().isEmpty() == false &&
+			 * scene2ComboBox4.getSelectionModel().isEmpty() == false &&
+			 * scene2ComboBox5.getSelectionModel().isEmpty() == false &&
+			 * scene2ComboBox6.getSelectionModel().isEmpty() == false) {
+			 * this.setCenter(scene3); } else {
+			 * 
+			 * List<String> listOfMissingDays = new ArrayList<String>();
+			 * 
+			 * for (int i = 0; i < 7; i++) { String day = ""; if
+			 * (scene2ChoiceBoxes[i].getSelectionModel().isEmpty()) { switch (i) { case 0:
+			 * day = "Monday"; break; case 1: day = "Tuesday"; break; case 2: day =
+			 * "Wednesday"; break; case 3: day = "Thursday"; break; case 4: day = "Friday";
+			 * break; case 5: day = "Saturday"; break; case 6: day = "Sunday"; break;
+			 * default: day = ""; break; } listOfMissingDays.add(day);
+			 * 
+			 * } } String errorInput = ""; for(int j = 0; j < listOfMissingDays.size(); j++)
+			 * { if (listOfMissingDays.size() > 1) { if (j < listOfMissingDays.size() -1) {
+			 * errorInput += listOfMissingDays.get(j) + ", "; } else { errorInput +=
+			 * listOfMissingDays.get(j); } } else { errorInput += listOfMissingDays.get(j);
+			 * } }
+			 * 
+			 * Alert alert = new Alert(AlertType.INFORMATION);
+			 * alert.setTitle("Error in meal type input");
+			 * alert.setContentText("Please select a meal type for the following days: " +
+			 * errorInput + "."); alert.showAndWait();
+			 */
 		});
 	}
 
