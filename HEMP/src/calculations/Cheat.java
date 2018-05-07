@@ -1,4 +1,4 @@
-package calculations;
+﻿package calculations;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -53,15 +53,15 @@ public class Cheat {
 	Foods.add(new Food("Olive Garden French Salad",2,145,"French","Salad"));
 	Foods.add(new Food("Cheesecake Factory Fruit Salad", 3,120,"Salad","Vegetarian"));
 	Foods.add(new Food("Kabuki Seaweed Salad",2,150,"Salad","Asian"));
-	Foods.add(new Food("Dickey’s BBQ Salad",2,200,"Salad","American"));
-	Foods.add(new Food("Norm’s Porterhouse Steak",1,300,"Steak","American"));
+	Foods.add(new Food("Dickey's BBQ Salad",2,200,"Salad","American"));
+	Foods.add(new Food("Norm's Porterhouse Steak",1,300,"Steak","American"));
 	Foods.add(new Food("Black Angus Prime Rib",1,277,"Steak","American"));
 	Foods.add(new Food("Olive Garden NY Strip",1,210,"Steak","Italian"));
 	Foods.add(new Food("LaCroix Bearnaise Porterhouse",1,300,"Steak","French"));
 	Foods.add(new Food("LaCroix Filet Minion",1,250,"Steak","French"));
 	Foods.add(new Food("LaCroix Strawberry Tart",3,120,"French","Vegetarian"));
 	Foods.add(new Food("McCormicks Fruit Medley",3,200,"American","Vegetarian"));
-	Foods.add(new Food("Anthony’s Pineapple Tart", 3,120,"American","Vegetarian"));
+	Foods.add(new Food("Anthony's Pineapple Tart", 3,120,"American","Vegetarian"));
 	Foods.add(new Food("Giuseppe's Raspberry Cannoli",3,124,"Italian","Vegetarian"));
 	Foods.add(new Food("Kabuki Fresh Fruit",3,100,"Asian","Vegetarian"));
 	Foods.add(new Food("China King Lo Mein",4,200,"Asian","Asian"));
